@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/setup.js" defer></script>
+    <!-- <script src="scripts/size.js" defer></script> -->
+    <script src="scripts/line.js" defer></script>
+    <script src="scripts/area.js" defer></script>
+    <script src="scripts/draw.js" defer></script>
+    <title> OpenStreetMap Drawing Board</title>
+</head>
+<body>
+    <div class="legend">
+        <div class="legend-flex">
+            <div>
+                <div class="color"></div>
+                To be explored
+            </div>
+            <div>
+                <div class="color"></div>
+                Explored
+            </div>
+            <div>
+                <div class="color"></div>
+                Found
+            </div>
+        </div>
+    </div>
+    <div class="draw">
+        <div class="colors" id="colors">
+            <div class="color current-color"></div>
+            <div class="color"></div>
+            <div class="color"></div>
+        </div>
+        <div class="shapes" id="shapes">
+            <div class="brush" id="brush">
+                <svg width="100%" height="100%" viewBox="0 0 100 100">
+                    <path
+                        fill="pink"
+                        fill-opacity="1"
+                        stroke-width="3"
+                        stroke-linejoin="round"
+                        d="M 139.2,43.2C 139.2,43.2 79.2,57.6 79.2,79.2C 79.2,100.8 110.4,98.4 110.4,108C 110.4,117.6 52.8,132 43.2,134.4L 45.6,141.6C 45.6,141.6 117.6,127.2 117.6,108C 117.6,88.8 86.4,96 86.4,79.2C 86.4,62.4 141.6,50.4 141.6,50.4L 139.2,43.2 Z"
+                    >
+                </svg>
+            </div>
+            <div class="line" id="line">
+                <svg width="100%" height="100%" viewBox="0 0 100 100">
+                    <line x1="90%" y1="10%" x2="10%" y2="90%" stroke="pink" stroke-width="7">
+                </svg>
+            </div>
+            <div class="area" id="area">
+                <svg width="100%" height="100%">
+                    <circle cx="10" cy="10" r="9" fill="#ffc0cb33" stroke="pink" stroke-width="1">
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="size" id="size">
+        <input type="number" class="weight" id="weight" value="3">
+        <input type="number" class="radius" id="radius" value="10">
+    </div>
+    <div id="map" class="map"></div>
+</body>
+</html>
